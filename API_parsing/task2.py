@@ -2,21 +2,6 @@ import requests
 import json
 from pprint import pprint
 
-# 1. Посмотреть документацию к API GitHub, разобраться как вывести список репозиториев для конкретного пользователя,
-# сохранить JSON-вывод в файле *.json.
-
-
-head = {'User-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
-
-
-def git_repos_list(username):
-
-    repos = requests.get(f'https://api.github.com/users/{username}/repos')
-
-    with open(f'{username}_repos_list.json', 'w', encoding='utf8') as f:
-        pprint(json.loads(repos.text), f)
-
-
 # 2. Изучить список открытых API. Найти среди них любое, требующее авторизацию (любого типа). Выполнить запросы к нему,
 # пройдя авторизацию. Ответ сервера записать в файл.
 
@@ -31,5 +16,4 @@ def get_currency_exchange_rate(currency, API_key):
 
 
 if __name__ == '__main__':
-    git_repos_list('Tarelkinal')
     get_currency_exchange_rate('RUB', API_key)
