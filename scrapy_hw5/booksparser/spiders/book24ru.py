@@ -10,7 +10,7 @@ class Book24ruSpider(scrapy.Spider):
 
     custom_settings = {
         'CONCURRENT_REQUESTS': 16,
-        'DOWNLOAD_DELAY': 1
+        'DOWNLOAD_DELAY': 0
     }
 
     def __init__(self, topic):
